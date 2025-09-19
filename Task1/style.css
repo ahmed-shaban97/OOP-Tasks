@@ -1,0 +1,33 @@
+    body {
+        background: #f8f9fa;
+    }
+
+    .card-custom {
+        border: none;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .card-custom:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-custom img {
+        height: 250px;
+        object-fit: contain;
+        width: 100%;
+        background-color: #fdfdfd;
+        padding: 10px;
+    }
+
+    .price-discount {
+        color: #28a745;
+        font-weight: 600;
+    }
+
+    .price-final {
+        color: #007bff;
+        font-weight: 700;
+    }
