@@ -148,6 +148,88 @@ object(MagicMethod)#1 (1) {
 string(5) "value"
 }
 */
+
+
+// Abstract class Shape
+abstract class Shape2 {
+    protected $name;
+
+    public function __construct($name) {
+        $this->name = $name;
+    }
+
+    // Abstract method (must be implemented by subclasses)
+    abstract public function area();
+
+    // Concrete method
+    public function getName() {
+        return $this->name;
+    }
+}
+
+// Rectangle class extending Shape
+class Rectangle2 extends Shape2 {
+    private $width, $height;
+
+    public function __construct($width, $height, $name) {
+        parent::__construct($name);
+        $this->width = $width;
+        $this->height = $height;
+    }
+
+    public function area() {
+        return $this->width * $this->height;
+    }
+}
+
+// Using the classes
+$rect = new Rectangle2(5, 10, "My Rectangle");
+echo $rect->getName() . " area: " . $rect->area();
+
+// Output =>  My Rectangle area: 50
+
+
+// Interface Drawable
+interface Drawable {
+    public function draw();
+}
+
+// Interface Movable
+interface Movable {
+    public function moveTo($x, $y);
+}
+
+// Circle class implementing both interfaces
+class Circle implements Drawable, Movable {
+    private $radius;
+
+    public function __construct($radius) {
+        $this->radius = $radius;
+    }
+
+    public function draw() {
+        echo "Circle has been drawn\n";
+    }
+
+    public function moveTo($x, $y) {
+        echo "Circle moved to x=$x, y=$y\n";
+    }
+}
+
+// Using the Circle class
+$circle = new Circle(5);
+$circle->draw();
+$circle->moveTo(10, 20);
+
+/* Output =>
+Circle has been drawn
+Circle moved to x=10, y=20
+*/
+
 ?>
+
+
+
+
 
 
